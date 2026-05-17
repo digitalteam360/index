@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360° Digital Transformation</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: 'Outfit', sans-serif; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f0ff, #7c3aed, #f43f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 40px rgba(124,58,237,0.15);
+  transform: translateY(-6px);
+}
+
+.section-fade {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.icon-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulse-ring 2s ease infinite;
+}
+
+.ethics-card {
+  position: relative;
+  overflow: hidden;
+}
+.ethics-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #00f0ff);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.ethics-card:hover::after {
+  transform: scaleX(1);
+}
+
+.process-line {
+  position: relative;
+}
+.process-line::before {
+  content: '';
+  position: absolute;
+  top: 24px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7c3aed33, #7c3aed, #00f0ff, #00f0ff33);
+}
+
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(0,240,255,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(244,63,94,0.04) 0%, transparent 50%);
+}
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full overflow-auto w-full" style="background-color: #07080f; color: #e8e8ed;">
+   <!-- Hero Section -->
+   <section class="hero-bg relative min-h-[600px] flex items-center justify-center text-center px-6 py-24">
+    <div class="max-w-5xl mx-auto">
+     <p class="uppercase tracking-[0.3em] text-xs mb-6" style="color: #00f0ff; font-family: 'Space Mono', monospace;">Educate · Upskill · Mentor · Transform</p>
+     <h1 id="hero-title" class="text-5xl md:text-7xl font-900 leading-tight gradient-text mb-8">360° Digital Transformation!</h1>
+     <div class="w-20 h-1 mx-auto rounded-full" style="background: linear-gradient(90deg, #7c3aed, #00f0ff);"></div>
+    </div>
+   </section><!-- 4 Cards Section -->
+   <section class="px-6 py-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+     <div class="card-glow rounded-2xl p-6 transition-all duration-500 border" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #7c3aed22, #7c3aed44);"><i data-lucide="graduation-cap" style="color: #7c3aed; width:24px; height:24px;"></i>
+      </div>
+      <p class="text-xs font-600 uppercase tracking-widest mb-1" style="color: #7c3aed;">Experiential Education</p>
+      <h3 class="text-lg font-700 mb-3" style="color: #fff;">Make Your Dream Comes True</h3>
+      <p class="text-sm leading-relaxed" style="color: #9ca3af;">Empowering Academic Dreams through Quality Education and Financial Assistance</p>
+     </div>
+     <div class="card-glow rounded-2xl p-6 transition-all duration-500 border" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #00f0ff22, #00f0ff44);"><i data-lucide="trending-up" style="color: #00f0ff; width:24px; height:24px;"></i>
+      </div>
+      <p class="text-xs font-600 uppercase tracking-widest mb-1" style="color: #00f0ff;">Professional Upskilling</p>
+      <h3 class="text-lg font-700 mb-3" style="color: #fff;">Make Your Skill Comes True</h3>
+      <p class="text-sm leading-relaxed" style="color: #9ca3af;">Unlocking Potential through Training and Development to Explore Professional Skills</p>
+     </div>
+     <div class="card-glow rounded-2xl p-6 transition-all duration-500 border" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #f43f5e22, #f43f5e44);"><i data-lucide="compass" style="color: #f43f5e; width:24px; height:24px;"></i>
+      </div>
+      <p class="text-xs font-600 uppercase tracking-widest mb-1" style="color: #f43f5e;">Personalized Mentorship</p>
+      <h3 class="text-lg font-700 mb-3" style="color: #fff;">Make Your Career Comes True</h3>
+      <p class="text-sm leading-relaxed" style="color: #9ca3af;">Helping the Right and Bright Career Direction with Expert's Mentorship for a Successful Future</p>
+     </div>
+     <div class="card-glow rounded-2xl p-6 transition-all duration-500 border" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #fbbf2422, #fbbf2444);"><i data-lucide="monitor" style="color: #fbbf24; width:24px; height:24px;"></i>
+      </div>
+      <p class="text-xs font-600 uppercase tracking-widest mb-1" style="color: #fbbf24;">Digital Transformation</p>
+      <h3 class="text-lg font-700 mb-3" style="color: #fff;">Make Your Success Comes True</h3>
+      <p class="text-sm leading-relaxed" style="color: #9ca3af;">Empowering Everyone with Accessible Digital Services, Resources and Opportunities to Achieve Sustainable Success</p>
+     </div>
+    </div>
+   </section><!-- Vision & Mission -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center mb-14">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text">Vision and Mission</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div class="rounded-2xl p-8 border text-center" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 relative icon-ring" style="background: #7c3aed22; color: #7c3aed;"><i data-lucide="eye" style="width:28px; height:28px;"></i>
+      </div>
+      <h3 class="text-xl font-700 mb-3" style="color: #fff;">Vision</h3>
+      <p id="vision-text" class="text-sm leading-relaxed" style="color: #9ca3af;">The vision is to create and promote a culture of digital transformation.</p>
+     </div>
+     <div class="rounded-2xl p-8 border text-center" style="background: #0f1119; border-color: #1e1f2e;">
+      <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 relative icon-ring" style="background: #00f0ff22; color: #00f0ff;"><i data-lucide="target" style="width:28px; height:28px;"></i>
+      </div>
+      <h3 class="text-xl font-700 mb-3" style="color: #fff;">Mission</h3>
+      <p id="mission-text" class="text-sm leading-relaxed" style="color: #9ca3af;">The mission is to educate everyone in advanced digital technologies.</p>
+     </div>
+    </div>
+   </section><!-- Story & Journey -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-6">Story and Journey</h2>
+     <p id="story-desc" class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-14" style="color: #9ca3af;">Our core motive is providing quality education, science exploration and technology transformation. We are creating and promoting a culture of digital transformation by providing easily accessible services, resources and opportunities to help everyone become knowledgeable skilled leaders. We are a young and passionate team of change makers committed to transforming public communities.</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: #7c3aed22;"><i data-lucide="book-open" style="color: #7c3aed; width:20px; height:20px;"></i>
+        </div>
+        <h3 class="text-lg font-700" style="color: #fff;">Educational Solutions</h3>
+       </div>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Transforming education and skill through personalized content, powerful mentorship and integrating technology.</p>
+      </div>
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: #00f0ff22;"><i data-lucide="cpu" style="color: #00f0ff; width:20px; height:20px;"></i>
+        </div>
+        <h3 class="text-lg font-700" style="color: #fff;">Technological Solutions</h3>
+       </div>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Transforming career and business through tech with data driven solutions for efficiency, scalability and growth.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Core Ethics -->
+   <section class="px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-14">Core Ethics and Values</h2>
+     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="book" style="color: #7c3aed; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Learning</h4>
+       <p class="text-xs" style="color: #6b7280;">Seeking knowledge to empower and transform lives.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="flame" style="color: #f43f5e; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Passion</h4>
+       <p class="text-xs" style="color: #6b7280;">Acting with enthusiasm to create positive change.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="lightbulb" style="color: #fbbf24; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Innovation</h4>
+       <p class="text-xs" style="color: #6b7280;">Using creativity and technology for impactful solutions.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="shield" style="color: #00f0ff; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Integrity</h4>
+       <p class="text-xs" style="color: #6b7280;">Maintaining honesty and ethical values in all we do.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="crown" style="color: #a78bfa; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Leadership</h4>
+       <p class="text-xs" style="color: #6b7280;">Inspiring individuals to lead and create change.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="users" style="color: #34d399; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Teamwork</h4>
+       <p class="text-xs" style="color: #6b7280;">Collaborating to achieve shared success and growth.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="award" style="color: #f97316; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Excellence</h4>
+       <p class="text-xs" style="color: #6b7280;">Delivering quality and striving for the best outcomes.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="scan-eye" style="color: #60a5fa; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Transparency</h4>
+       <p class="text-xs" style="color: #6b7280;">Building trust with clear and open communication.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="heart" style="color: #ec4899; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Dedication</h4>
+       <p class="text-xs" style="color: #6b7280;">Fully committed to empowering and transforming lives.</p>
+      </div>
+      <div class="ethics-card rounded-xl p-5 border text-center transition-all duration-300 hover:-translate-y-1" style="background: #0f1119; border-color: #1e1f2e;">
+       <i data-lucide="handshake" style="color: #14b8a6; width:22px; height:22px; margin: 0 auto 10px;"></i>
+       <h4 class="text-sm font-700 mb-1" style="color: #fff;">Commitment</h4>
+       <p class="text-xs" style="color: #6b7280;">Consistently working toward long-term and big impact.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Who We Are -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-4">Who We Are?</h2>
+     <p class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-14" style="color: #9ca3af;">We believe in the power of educating, upskilling, mentoring and transforming to change mindset and skillset for the transformation of a skilled mindset.</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card-glow rounded-2xl p-6 border text-center transition-all duration-500" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);"><i data-lucide="pen-tool" style="color: #fff; width:22px; height:22px;"></i>
+       </div>
+       <h3 class="text-base font-700 mb-2" style="color: #fff;">Educating</h3>
+       <p class="text-xs leading-relaxed" style="color: #9ca3af;">Empowering learners with an experiential education like creative design thinking and critical problem solving.</p>
+      </div>
+      <div class="card-glow rounded-2xl p-6 border text-center transition-all duration-500" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #00f0ff, #67e8f9);"><i data-lucide="layers" style="color: #fff; width:22px; height:22px;"></i>
+       </div>
+       <h3 class="text-base font-700 mb-2" style="color: #fff;">Upskilling</h3>
+       <p class="text-xs leading-relaxed" style="color: #9ca3af;">Unlocking potential with multi-disciplinary knowledge and multi-professional skills to prepare for a dynamic future.</p>
+      </div>
+      <div class="card-glow rounded-2xl p-6 border text-center transition-all duration-500" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #f43f5e, #fb7185);"><i data-lucide="message-circle" style="color: #fff; width:22px; height:22px;"></i>
+       </div>
+       <h3 class="text-base font-700 mb-2" style="color: #fff;">Mentoring</h3>
+       <p class="text-xs leading-relaxed" style="color: #9ca3af;">Providing personalized mentoring designed to shape unique strengths and aspirations with social experiments.</p>
+      </div>
+      <div class="card-glow rounded-2xl p-6 border text-center transition-all duration-500" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #fbbf24, #fcd34d);"><i data-lucide="zap" style="color: #fff; width:22px; height:22px;"></i>
+       </div>
+       <h3 class="text-base font-700 mb-2" style="color: #fff;">Transforming</h3>
+       <p class="text-xs leading-relaxed" style="color: #9ca3af;">Fostering the growth of early-stage minds from bootstrapped beginnings through digital transformation.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- What We Do -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-4">What We Do?</h2>
+     <p class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-16" style="color: #9ca3af;">We are a young passionate team of problem solvers dedicated to transforming ideas into reality through a commitment to excellence.</p>
+     <div class="relative process-line">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-800" style="background: #7c3aed; color: #fff;">
+         01
+        </div>
+        <h3 class="text-base font-700 mb-2" style="color: #fff;">Ideate</h3>
+        <p class="text-xs leading-relaxed" style="color: #9ca3af;">We brainstorm innovative ideas to solve unique challenges.</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-800" style="background: #00f0ff; color: #07080f;">
+         02
+        </div>
+        <h3 class="text-base font-700 mb-2" style="color: #fff;">Evaluate</h3>
+        <p class="text-xs leading-relaxed" style="color: #9ca3af;">We assess and refine ideas to ensure accessible opportunities.</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-800" style="background: #f43f5e; color: #fff;">
+         03
+        </div>
+        <h3 class="text-base font-700 mb-2" style="color: #fff;">Explore</h3>
+        <p class="text-xs leading-relaxed" style="color: #9ca3af;">We research and develop tech with data driven solutions and outcomes.</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-800" style="background: #fbbf24; color: #07080f;">
+         04
+        </div>
+        <h3 class="text-base font-700 mb-2" style="color: #fff;">Expand</h3>
+        <p class="text-xs leading-relaxed" style="color: #9ca3af;">We implement strategies to scaleup and achieve sustainable growth.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Our Beneficiaries -->
+   <section class="px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-14">Our Beneficiaries</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+       <h3 class="text-2xl font-700 mb-6" style="color: #fff;">Individuals</h3>
+       <div class="grid grid-cols-2 gap-3">
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #7c3aed;">
+         Students
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #00f0ff;">
+         Educators
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #f43f5e;">
+         Research Scholars
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #fbbf24;">
+         Scientists
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #a78bfa;">
+         Technologists
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #34d399;">
+         Professionals
+        </div>
+       </div>
+      </div>
+      <div>
+       <h3 class="text-2xl font-700 mb-6" style="color: #fff;">Organizations</h3>
+       <div class="grid grid-cols-2 gap-3">
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #7c3aed;">
+         Schools
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #00f0ff;">
+         Colleges
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #f43f5e;">
+         Universities
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #fbbf24;">
+         Incubators
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #a78bfa;">
+         Accelerators
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #34d399;">
+         MSMEs
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #60a5fa;">
+         Startups
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #ec4899;">
+         Corporates
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #14b8a6;">
+         Nonprofits
+        </div>
+        <div class="px-4 py-3 rounded-lg border text-center text-sm font-600 transition-all duration-300 hover:scale-105" style="background: #0f1119; border-color: #1e1f2e; color: #f97316;">
+         Governments
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Our Services -->
+   <section class="px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-4">Our Services</h2>
+     <p id="services-desc" class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-14" style="color: #9ca3af;">Unlock the power of education, skill, career and business by exploring our services to achieve sustainable growth.</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-purple-500 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Education, Scholarship and Fellowship</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #7c3aed; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(124,58,237,0.1); color: #7c3aed;" onmouseover="this.style.background='rgba(124,58,237,0.2)'" onmouseout="this.style.background='rgba(124,58,237,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-cyan-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Science, Technology, Engineering and Mathematics</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #00f0ff; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(0,240,255,0.1); color: #00f0ff;" onmouseover="this.style.background='rgba(0,240,255,0.2)'" onmouseout="this.style.background='rgba(0,240,255,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-rose-500 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Courses and Trainings</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #f43f5e; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(244,63,94,0.1); color: #f43f5e;" onmouseover="this.style.background='rgba(244,63,94,0.2)'" onmouseout="this.style.background='rgba(244,63,94,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-amber-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Short-Term and Long-Term Programs</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #fbbf24; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(251,191,36,0.1); color: #fbbf24;" onmouseover="this.style.background='rgba(251,191,36,0.2)'" onmouseout="this.style.background='rgba(251,191,36,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-purple-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Project and Collaboration</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #a78bfa; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(167,139,250,0.1); color: #a78bfa;" onmouseover="this.style.background='rgba(167,139,250,0.2)'" onmouseout="this.style.background='rgba(167,139,250,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-green-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Startup and Entrepreneurship</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #34d399; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(52,211,153,0.1); color: #34d399;" onmouseover="this.style.background='rgba(52,211,153,0.2)'" onmouseout="this.style.background='rgba(52,211,153,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-blue-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Incubation and Acceleration</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #60a5fa; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(96,165,250,0.1); color: #60a5fa;" onmouseover="this.style.background='rgba(96,165,250,0.2)'" onmouseout="this.style.background='rgba(96,165,250,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-pink-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Funding and Investment</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #ec4899; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(236,72,153,0.1); color: #ec4899;" onmouseover="this.style.background='rgba(236,72,153,0.2)'" onmouseout="this.style.background='rgba(236,72,153,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-teal-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Community Building</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #14b8a6; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(20,184,166,0.1); color: #14b8a6;" onmouseover="this.style.background='rgba(20,184,166,0.2)'" onmouseout="this.style.background='rgba(20,184,166,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-orange-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Events and Activities</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #f97316; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(249,115,22,0.1); color: #f97316;" onmouseover="this.style.background='rgba(249,115,22,0.2)'" onmouseout="this.style.background='rgba(249,115,22,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-indigo-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Awards and Recognitions</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #6366f1; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(99,102,241,0.1); color: #6366f1;" onmouseover="this.style.background='rgba(99,102,241,0.2)'" onmouseout="this.style.background='rgba(99,102,241,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-cyan-300 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Membership and Engagement</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #06b6d4; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(6,182,212,0.1); color: #06b6d4;" onmouseover="this.style.background='rgba(6,182,212,0.2)'" onmouseout="this.style.background='rgba(6,182,212,0.1)'">Explore More →</button>
+      </div>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-red-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Internship and Career</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #ef4444; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(239,68,68,0.1); color: #ef4444;" onmouseover="this.style.background='rgba(239,68,68,0.2)'" onmouseout="this.style.background='rgba(239,68,68,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-violet-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Products and Services</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #8b5cf6; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(139,92,246,0.1); color: #8b5cf6;" onmouseover="this.style.background='rgba(139,92,246,0.2)'" onmouseout="this.style.background='rgba(139,92,246,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-lime-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Research and Innovation</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #84cc16; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(132,204,22,0.1); color: #84cc16;" onmouseover="this.style.background='rgba(132,204,22,0.2)'" onmouseout="this.style.background='rgba(132,204,22,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-sky-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Training and Development</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #0ea5e9; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(14,165,233,0.1); color: #0ea5e9;" onmouseover="this.style.background='rgba(14,165,233,0.2)'" onmouseout="this.style.background='rgba(14,165,233,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-rose-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Mentorship and Consultancy</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #fb7185; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(251,113,133,0.1); color: #fb7185;" onmouseover="this.style.background='rgba(251,113,133,0.2)'" onmouseout="this.style.background='rgba(251,113,133,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-fuchsia-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Career and Business Guidance</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #d946ef; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(217,70,239,0.1); color: #d946ef;" onmouseover="this.style.background='rgba(217,70,239,0.2)'" onmouseout="this.style.background='rgba(217,70,239,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-cyan-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Partnership and Sponsorship</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #22d3ee; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(34,211,238,0.1); color: #22d3ee;" onmouseover="this.style.background='rgba(34,211,238,0.2)'" onmouseout="this.style.background='rgba(34,211,238,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-yellow-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Social Service and Volunteership</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #eab308; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(234,179,8,0.1); color: #eab308;" onmouseover="this.style.background='rgba(234,179,8,0.2)'" onmouseout="this.style.background='rgba(234,179,8,0.1)'">Explore More →</button>
+      </div>
+      <div class="card-glow rounded-xl p-6 border transition-all duration-500 hover:border-purple-400 group cursor-pointer" style="background: #0f1119; border-color: #1e1f2e;">
+       <div class="flex items-start justify-between mb-4">
+        <h3 class="text-base font-700" style="color: #fff;">Cultural and Digital Transformation</h3><i data-lucide="arrow-right" style="width:18px; height:18px; color: #c084fc; opacity: 0; group-hover:opacity-100; transition: opacity 0.3s;"></i>
+       </div><button class="inline-block text-xs font-600 px-3 py-1.5 rounded-lg transition-all duration-300" style="background: rgba(192,132,252,0.1); color: #c084fc;" onmouseover="this.style.background='rgba(192,132,252,0.2)'" onmouseout="this.style.background='rgba(192,132,252,0.1)'">Explore More →</button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Our Products -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text mb-4">Our Products</h2>
+     <p class="text-sm md:text-base leading-relaxed mb-8" style="color: #9ca3af;">Explore our impactful products that showcase tech with data insights to deliver innovative solutions and expected outcomes.</p><button class="inline-block px-8 py-3 rounded-lg font-600 transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #7c3aed, #00f0ff); color: #fff;" onmouseover="this.style.boxShadow='0 0 30px rgba(124,58,237,0.3)'" onmouseout="this.style.boxShadow='none'">Explore More →</button>
+    </div>
+   </section><!-- Events and Activities -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text mb-4">Events and Activities</h2>
+     <p class="text-sm md:text-base leading-relaxed mb-8" style="color: #9ca3af;">Bringing people together through engaging events and activities that inspire learning, connection and growth.</p><button class="inline-block px-8 py-3 rounded-lg font-600 transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #f43f5e, #fbbf24); color: #fff;" onmouseover="this.style.boxShadow='0 0 30px rgba(244,63,94,0.3)'" onmouseout="this.style.boxShadow='none'">Explore More →</button>
+    </div>
+   </section><!-- Community and Membership -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text mb-4">Community and Membership</h2>
+     <p class="text-sm md:text-base leading-relaxed mb-8" style="color: #9ca3af;">Empowering everyone with accessible digital services, resources and opportunities to achieve sustainable success.</p><button class="inline-block px-8 py-3 rounded-lg font-600 transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #34d399, #00f0ff); color: #fff;" onmouseover="this.style.boxShadow='0 0 30px rgba(52,211,153,0.3)'" onmouseout="this.style.boxShadow='none'">Explore More →</button>
+    </div>
+   </section><!-- Internship and Career -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text mb-4">Internship and Career</h2>
+     <p class="text-sm md:text-base leading-relaxed mb-8" style="color: #9ca3af;">We are always looking for passionate individuals to make our team better. We are one team with one goal to support, celebrate and trust each other. We are redefining the traditional work culture.</p><button class="inline-block px-8 py-3 rounded-lg font-600 transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #8b5cf6, #ec4899); color: #fff;" onmouseover="this.style.boxShadow='0 0 30px rgba(139,92,246,0.3)'" onmouseout="this.style.boxShadow='none'">Explore More →</button>
+    </div>
+   </section><!-- Partnership and Sponsorship -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-14">Partnership and Sponsorship</h2>
+     <p class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-14" style="color: #9ca3af;">We have partnerships and collaborations with authorized and recognized institutions, corporates, governments and nonprofits to create and promote a culture of digital transformation.</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <h3 class="text-xl font-700 mb-4" style="color: #7c3aed;">Educational Organizations</h3>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Collaborating with universities, colleges, and schools to enhance educational outcomes and digital literacy.</p>
+      </div>
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <h3 class="text-xl font-700 mb-4" style="color: #00f0ff;">Commercial Organizations</h3>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Working with leading companies to bridge the skill gap and create employment opportunities for our learners.</p>
+      </div>
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <h3 class="text-xl font-700 mb-4" style="color: #f43f5e;">Government Organizations</h3>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Partnering with government agencies to support digital transformation initiatives and policy development.</p>
+      </div>
+      <div class="rounded-2xl p-8 border" style="background: #0f1119; border-color: #1e1f2e;">
+       <h3 class="text-xl font-700 mb-4" style="color: #fbbf24;">Nonprofit Organizations</h3>
+       <p class="text-sm leading-relaxed" style="color: #9ca3af;">Collaborating with NGOs and social enterprises to create inclusive growth and community development programs.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Us -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-4">Contact Us</h2>
+     <p class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-14" style="color: #9ca3af;">Overcome challenges with solutions, unlock success with powerful mentorship, boost journeys with dedicated support.</p>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="rounded-2xl p-8 border text-center transition-all duration-500 hover:-translate-y-2" style="background: #0f1119; border-color: #1e1f2e;"><i data-lucide="mail" style="width:32px; height:32px; color: #7c3aed; margin: 0 auto 12px;"></i>
+       <p class="text-sm font-600 mb-2" style="color: #fff;">Email</p><a id="contact-email" href="mailto:hello@digitaltamilnadu.in" style="color: #00f0ff; text-decoration: none; font-size: 14px;" class="hover:underline">hello@digitaltamilnadu.in</a>
+      </div>
+      <div class="rounded-2xl p-8 border text-center transition-all duration-500 hover:-translate-y-2" style="background: #0f1119; border-color: #1e1f2e;"><i data-lucide="message-circle" style="width:32px; height:32px; color: #34d399; margin: 0 auto 12px;"></i>
+       <p class="text-sm font-600 mb-2" style="color: #fff;">WhatsApp</p><a id="contact-phone" href="https://wa.me/+919363303377" target="_blank" rel="noopener noreferrer" style="color: #00f0ff; text-decoration: none; font-size: 14px;" class="hover:underline">+919363303377</a>
+      </div>
+      <div class="rounded-2xl p-8 border text-center transition-all duration-500 hover:-translate-y-2" style="background: #0f1119; border-color: #1e1f2e;"><i data-lucide="map-pin" style="width:32px; height:32px; color: #f43f5e; margin: 0 auto 12px;"></i>
+       <p class="text-sm font-600 mb-2" style="color: #fff;">Location</p>
+       <p id="contact-location" style="color: #9ca3af; font-size: 14px;">Chennai. Tamil Nadu.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Follow Us -->
+   <section class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-800 gradient-text text-center mb-4">Follow Us</h2>
+     <p class="text-center text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-12" style="color: #9ca3af;">Stay connected with us on social media for the latest updates, insights and community discussions.</p>
+     <div class="flex justify-center items-center gap-8 flex-wrap"><a href="https://www.facebook.com/digitaltamilnadu.in" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style="background: rgba(124,58,237,0.1);" onmouseover="this.style.background='rgba(124,58,237,0.2)'" onmouseout="this.style.background='rgba(124,58,237,0.1)'"> <i data-lucide="facebook" style="width:20px; height:20px; color: #7c3aed;"></i> </a> <a href="https://www.instagram.com/digitaltamilnadu.in" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style="background: rgba(236,72,153,0.1);" onmouseover="this.style.background='rgba(236,72,153,0.2)'" onmouseout="this.style.background='rgba(236,72,153,0.1)'"> <i data-lucide="instagram" style="width:20px; height:20px; color: #ec4899;"></i> </a> <a href="https://www.youtube.com/@digitaltamilnadu" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style="background: rgba(239,68,68,0.1);" onmouseover="this.style.background='rgba(239,68,68,0.2)'" onmouseout="this.style.background='rgba(239,68,68,0.1)'"> <i data-lucide="youtube" style="width:20px; height:20px; color: #ef4444;"></i> </a> <a href="https://www.linkedin.com/company/digitaltamilnadu" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style="background: rgba(0,240,255,0.1);" onmouseover="this.style.background='rgba(0,240,255,0.2)'" onmouseout="this.style.background='rgba(0,240,255,0.1)'"> <i data-lucide="linkedin" style="width:20px; height:20px; color: #00f0ff;"></i> </a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="px-6 py-12 border-t" style="background: #07080f; border-color: #1e1f2e;">
+    <div class="max-w-5xl mx-auto text-center">
+     <p style="color: #9ca3af; font-size: 14px;">© 2026 All Rights Reserved by Education in India.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+const defaultConfig = {
+  hero_title: "360° Digital Transformation!",
+  vision_text: "The vision is to create and promote a culture of digital transformation.",
+  mission_text: "The mission is to educate everyone in advanced digital technologies.",
+  story_description: "Our core motive is providing quality education, science exploration and technology transformation. We are creating and promoting a culture of digital transformation by providing easily accessible services, resources and opportunities to help everyone become knowledgeable skilled leaders. We are a young and passionate team of change makers committed to transforming public communities.",
+  services_description: "Unlock the power of education, skill, career and business by exploring our services to achieve sustainable growth.",
+  contact_email: "hello@digitaltamilnadu.in",
+  contact_phone: "+919363303377",
+  contact_location: "Chennai. Tamil Nadu.",
+  background_color: "#07080f",
+  surface_color: "#0f1119",
+  text_color: "#e8e8ed",
+  primary_action: "#7c3aed",
+  secondary_action: "#00f0ff",
+  font_family: "Outfit",
+  font_size: 16
+};
+
+function applyConfig(config) {
+  const el = (id) => document.getElementById(id);
+  el('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+  el('vision-text').textContent = config.vision_text || defaultConfig.vision_text;
+  el('mission-text').textContent = config.mission_text || defaultConfig.mission_text;
+  el('story-desc').textContent = config.story_description || defaultConfig.story_description;
+  el('services-desc').textContent = config.services_description || defaultConfig.services_description;
+  el('contact-email').href = `mailto:${config.contact_email || defaultConfig.contact_email}`;
+  el('contact-email').textContent = config.contact_email || defaultConfig.contact_email;
+  el('contact-phone').href = `https://wa.me/${(config.contact_phone || defaultConfig.contact_phone).replace(/\D/g, '')}`;
+  el('contact-phone').textContent = config.contact_phone || defaultConfig.contact_phone;
+  el('contact-location').textContent = config.contact_location || defaultConfig.contact_location;
+
+  const bg = config.background_color || defaultConfig.background_color;
+  const surface = config.surface_color || defaultConfig.surface_color;
+  const text = config.text_color || defaultConfig.text_color;
+  const app = el('app');
+  app.style.backgroundColor = bg;
+  app.style.color = text;
+
+  document.querySelectorAll('.card-glow, .ethics-card, [style*="background: #0f1119"]').forEach(c => {
+    c.style.backgroundColor = surface;
+  });
+
+  const font = config.font_family || defaultConfig.font_family;
+  const size = config.font_size || defaultConfig.font_size;
+  document.body.style.fontFamily = `${font}, Outfit, sans-serif`;
+  document.body.style.fontSize = size + 'px';
+}
+
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange: async (config) => { applyConfig(config); },
+  mapToCapabilities: (config) => ({
+    recolorables: [
+      { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+      { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+      { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+      { get: () => config.primary_action || defaultConfig.primary_action, set: (v) => { config.primary_action = v; window.elementSdk.setConfig({ primary_action: v }); } },
+      { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
+    ],
+    borderables: [],
+    fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+    fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+  }),
+  mapToEditPanelValues: (config) => new Map([
+    ["hero_title", config.hero_title || defaultConfig.hero_title],
+    ["vision_text", config.vision_text || defaultConfig.vision_text],
+    ["mission_text", config.mission_text || defaultConfig.mission_text],
+    ["story_description", config.story_description || defaultConfig.story_description],
+    ["services_description", config.services_description || defaultConfig.services_description],
+    ["contact_email", config.contact_email || defaultConfig.contact_email],
+    ["contact_phone", config.contact_phone || defaultConfig.contact_phone],
+    ["contact_location", config.contact_location || defaultConfig.contact_location]
+  ])
+});
+
+lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fca9d92c78d7f92',t:'MTc3ODkzNjk1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
